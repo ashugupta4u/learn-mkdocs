@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Owncore - Orchestration Pre-Sales Delivery Hub</title>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/hpe_theme.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Owncore";
+        var mkdocs_page_input_path = "oppertunity/OwnCore-Provisioning-ROM.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="../.."> Orchestration Pre-Sales Delivery Hub
+        </a><div role="search">
+<form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">CONTENTS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../..">Start here</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current">Pre-Sales Opportunity database</a>
+<ul class="current">
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Owncore</a>
+<ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#client-context">Client Context</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#business-goals">Business Goals</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-and-requirements">Scope and Requirements</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#provisioning-lifecycle-diagram">Provisioning Lifecycle Diagram</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#services-supported">Services Supported</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#use-cases">Use Cases</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#order-transactions">Order Transactions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-requirements">Performance Requirements</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#proposed-solution">Proposed Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#products-positioned">Products Positioned</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#target-architecture">Target Architecture</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#key-components">Key Components</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables">Deliverables</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#work-packages">Work Packages</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#timeline-and-milestones">Timeline and Milestones</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#risks-and-assumptions">Risks and Assumptions</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#assumptions">Assumptions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#exclusions">Exclusions</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#open-questions">Open Questions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="" href="../../templates.md">Templates</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Guides and guidelines</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../guides/design-patterns.md">Design patterns</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../..">Orchestration Pre-Sales Delivery Hub</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
+<li class="breadcrumb-item">CONTENTS</li>
+<li class="breadcrumb-item">Pre-Sales Opportunity database</li>
+<li class="breadcrumb-item active">Owncore</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="project-overview">Project Overview</h1>
+<p><strong>Opportunity Name:</strong> OwnCore Provisioning ROM<br/>
+<strong>Client:</strong> OwnCore (HPE Partner)<br/>
+<strong>Date:</strong> April 2026<br/>
+<strong>Status:</strong> Pre-Sales</p>
+<p>This opportunity focuses on demonstrating wireless provisioning capabilities to OwnCore deployed CORE network across different Communication Service Providers (CSPs). The initiative involves positioning HPE Telco Solution Service Order Management (SOM) and Resource Order Management (ROM) for comprehensive service/resource order management and wireless service provisioning (prepaid and postpaid) for consumer, enterprise, and roaming scenarios.</p>
+<hr/>
+<h2 id="client-context">Client Context</h2>
+<p><strong>Client:</strong> OwnCore<br/>
+<strong>Deployment Model:</strong> Multi-tenant infrastructure serving multiple clients with dedicated infrastructure stacks<br/>
+<strong>Geographic Scope:</strong> ASIA-PACIFIC region<br/>
+<strong>Partner:</strong> HPE (Hewlett Packard Enterprise)</p>
+<p>OwnCore supports multiple clients with separate deployment stacks. The platform handles diverse subscriber bases across two primary deployment configurations:</p>
+<ul>
+<li><strong>Large Customer (Setup 1):</strong></li>
+<li>Active subscribers with promotions/tariffs: 500,000</li>
+<li>Total subscriber base: 4,000,000</li>
+<li>
+<p>Daily active subscribers generating traffic: 150,000</p>
+</li>
+<li>
+<p><strong>Secondary Customer (Setup 2):</strong></p>
+</li>
+<li>Active subscribers with promotions/tariffs: 100,000</li>
+<li>Total subscriber base: 1,500,000</li>
+<li>Daily active subscribers generating traffic: 50,000</li>
+</ul>
+<hr/>
+<h2 id="business-goals">Business Goals</h2>
+<ol>
+<li>Position HPE Telco Solution for end-to-end service and resource order management</li>
+<li>Enable wireless provisioning for prepaid and postpaid services across consumer, enterprise, and roaming segments</li>
+<li>Implement comprehensive resource management covering reservation, assignment, allocation, and termination processes</li>
+<li>Achieve API throughput of <strong>50 transactions per second (TPS)</strong> at peak load</li>
+<li>Support subscriber lifecycle management including SIM/eSIM activation, plan changes, suspension, and termination</li>
+</ol>
+<hr/>
+<h2 id="scope-and-requirements">Scope and Requirements</h2>
+<h3 id="provisioning-lifecycle-diagram">Provisioning Lifecycle Diagram</h3>
+<pre class="mermaid"><code>flowchart LR
+   C[Create] --&gt; M[Modify]
+   M --&gt; SR[Suspend/Resume]
+   SR --&gt; T[Terminate]</code></pre>
+<h3 id="services-supported">Services Supported</h3>
+<p><strong>Service Orders:</strong>
+- SIM/eSIM activation
+- Plan assignment
+- Suspension and unsuspension
+- Plan changes
+- Termination</p>
+<p><strong>Resource Orders:</strong>
+- HSS provisioning (ICCID, IMSI, MSISDN, profiles)
+- OCS provisioning (balance and quota management)
+- PCRF provisioning (policy rules)
+- SMSC provisioning
+- MNP provisioning
+- DP+OTA provisioning
+- Entitlement Server updates</p>
+<h3 id="use-cases">Use Cases</h3>
+<ol>
+<li>Prepaid and Postpaid for Consumer</li>
+<li>Prepaid and Postpaid for Enterprise</li>
+<li>Roaming (eSIM provisioning)</li>
+</ol>
+<h3 id="order-transactions">Order Transactions</h3>
+<ul>
+<li>Create</li>
+<li>Modify (Plan upgrade, Change MSISDN, Change IMSI)</li>
+<li>Suspend/Resume</li>
+<li>Terminate</li>
+</ul>
+<h3 id="performance-requirements">Performance Requirements</h3>
+<ul>
+<li>API throughput: 50 TPS combined (service and resource order processing)</li>
+<li>Support for up to 5,000 orders per day</li>
+<li>Multi-environment support (Dev, SIT, UAT, Pre-prod, Production)</li>
+</ul>
+<hr/>
+<h2 id="proposed-solution">Proposed Solution</h2>
+<h3 id="products-positioned">Products Positioned</h3>
+<ul>
+<li><strong>Service Order Management (SOM)</strong> with Inventory and TMF641 capability</li>
+<li><strong>Resource Order Management (ROM)</strong> with Inventory and TMF652 capability</li>
+</ul>
+<h3 id="target-architecture">Target Architecture</h3>
+<pre class="mermaid"><code>flowchart LR
+   CRM[CRM Client] --&gt; APIGW[API Gateway]
+   APIGW --&gt; TMF641[TMF641 GW]
+   APIGW --&gt; TMF652[TMF652 GW]
+   TMF641 --&gt; SOM[SOM]
+   TMF652 --&gt; ROM[ROM]
+   SOM --&gt; CATALOG[Catalog]
+   ROM --&gt; CATALOG
+   SOM --&gt; ADP[Southbound Adapters]
+   ROM --&gt; ADP
+   ADP --&gt; HSS[HSS]
+   ADP --&gt; OCS[OCS]
+   ADP --&gt; PCRF[PCRF]
+   ADP --&gt; SMSC[SMSC]
+   ADP --&gt; MNP[MNP]
+   ADP --&gt; OTA[DP+OTA]
+   ADP --&gt; ENT[Entitlement Server]</code></pre>
+<h3 id="key-components">Key Components</h3>
+<ol>
+<li><strong>API Gateway</strong> - Centralized entry point for all service and resource orders</li>
+<li><strong>SOM Module</strong> - Service Order Management with TMF641 compliance</li>
+<li><strong>ROM Module</strong> - Resource Order Management with TMF652 compliance</li>
+<li><strong>Adapters</strong> - Southbound integration with network elements</li>
+<li><strong>Security</strong> - AD/LDAP integration</li>
+<li><strong>Monitoring</strong> - Real-time monitoring and web-based dashboards</li>
+<li><strong>CRM Integration</strong> - Client-facing order management interface</li>
+</ol>
+<hr/>
+<h2 id="deliverables">Deliverables</h2>
+<h3 id="work-packages">Work Packages</h3>
+<ol>
+<li><strong>Environment Setup</strong></li>
+<li>4 Non-Production Environments (Dev, SIT, UAT, Pre-prod)</li>
+<li>
+<p>Production Environment with High Availability (HA) and Geo-Redundancy</p>
+</li>
+<li>
+<p><strong>Development</strong></p>
+</li>
+<li>Development of 5 Southbound adapters for integration</li>
+<li>Modeling of 5 services and supported order transactions</li>
+<li>
+<p>Design documentation (Adapter, Service Model, Integration)</p>
+</li>
+<li>
+<p><strong>Testing &amp; Validation</strong></p>
+</li>
+<li>Testing support across all environments</li>
+<li>System integration testing (SIT)</li>
+<li>User acceptance testing (UAT)</li>
+<li>
+<p>Final user acceptance testing (FUAT)</p>
+</li>
+<li>
+<p><strong>Operations</strong></p>
+</li>
+<li>Production Stability Support (1 month post-deployment)</li>
+</ol>
+<hr/>
+<h2 id="timeline-and-milestones">Timeline and Milestones</h2>
+<p><strong>Total Duration:</strong> 24 weeks<br/>
+<strong>Project Structure:</strong> 6 major milestones</p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Phase</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W1-W2</td>
+<td>Project Initialization</td>
+<td>M1</td>
+<td>Kickoff meeting, Design, Hardware Readiness</td>
+</tr>
+<tr>
+<td>W3-W8</td>
+<td>Design &amp; Environment Setup</td>
+<td>M2</td>
+<td>Design Completed and Accepted, Env Setup</td>
+</tr>
+<tr>
+<td>W9-W15</td>
+<td>Adapter Development &amp; Service Modeling</td>
+<td>M3</td>
+<td>Development Completed, Setup Completed</td>
+</tr>
+<tr>
+<td>W16-W18</td>
+<td>Testing</td>
+<td>M4</td>
+<td>Testing Completed (SIT/UAT/FUAT)</td>
+</tr>
+<tr>
+<td>W19-W22</td>
+<td>Production Preparation</td>
+<td>M5</td>
+<td>Production Deployment Readiness</td>
+</tr>
+<tr>
+<td>W23-W24</td>
+<td>Production Rollout</td>
+<td>M6</td>
+<td>Production Deployment Complete</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>gantt
+   title OwnCore Provisioning Project Plan (24 Weeks)
+   dateFormat  YYYY-MM-DD
+   section Delivery Phases
+   Project Initialization              :a1, 2026-04-01, 14d
+   Design and Environment Setup        :a2, after a1, 42d
+   Adapter Development and Modeling    :a3, after a2, 49d
+   Testing (SIT/UAT/FUAT)              :a4, after a3, 21d
+   Production Preparation              :a5, after a4, 28d
+   Production Rollout                  :a6, after a5, 14d</code></pre>
+<hr/>
+<h2 id="risks-and-assumptions">Risks and Assumptions</h2>
+<h3 id="assumptions">Assumptions</h3>
+<ol>
+<li><strong>No Service Data Migrations</strong> - Existing data will not be migrated</li>
+<li><strong>Southbound Integrations</strong> - Limited to 2 southbound integrations that support CLI and/or SNMP</li>
+<li><strong>Resource Management Scope</strong> - SIM and MSISDN only (no UICC or other resource types)</li>
+<li><strong>Order Volume</strong> - Up to 5,000 orders per day capacity</li>
+<li><strong>Customer Adapters</strong> - No custom customer adapter development required</li>
+</ol>
+<h3 id="exclusions">Exclusions</h3>
+<ol>
+<li>Service Data Migrations</li>
+<li>Third-party adapter development beyond the 5 planned</li>
+<li>Advanced resource types beyond SIM and MSISDN</li>
+</ol>
+<hr/>
+<h2 id="open-questions">Open Questions</h2>
+<ol>
+<li>What are the specific requirements for HA and Geo-Redundancy in Production?</li>
+<li>Which 5 Southbound systems will be targeted for adapter development?</li>
+<li>What is the expected data retention and archival policy?</li>
+<li>Are there specific compliance or regulatory requirements (e.g., data residency)?</li>
+<li>What is the support model post-stability support period?</li>
+<li>Will there be performance testing requirements beyond 50 TPS baseline?</li>
+<li>What is the change management and rollback strategy for Production deployments?</li>
+</ol>
+<hr/>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong>Requirements Finalization</strong> - Confirm detailed technical and functional requirements with OwnCore</li>
+<li><strong>Architecture Review</strong> - Present and validate target architecture with stakeholder team</li>
+<li><strong>Resource Allocation</strong> - Assign development, testing, and operations teams</li>
+<li><strong>Environment Provisioning</strong> - Begin infrastructure preparation for 4 non-prod and 1 prod environment</li>
+<li><strong>Adapter Selection</strong> - Identify and prioritize the 5 Southbound systems for adapter development</li>
+<li><strong>Project Kickoff</strong> - Conduct formal project initialization with timeline confirmation</li>
+<li><strong>Design Phase Initiation</strong> - Start detailed design for SOM, ROM, and adapter implementations</li>
+</ol>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../.." title="Start here"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../.." style="color: #fcfcfc">« Previous</a></span>
+</span>
+</div>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../..";</script>
+<script src="../../js/theme_extra.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../../js/mermaid-init.js"></script>
+<script src="../../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
