@@ -30,8 +30,8 @@ markdown_extensions:
 
 plugins:
   - search
-#  - macros
-#  - mermaid2
+  - macros
+  - mermaid2
 
 nav:
   - CONTENTS:

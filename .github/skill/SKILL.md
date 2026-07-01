@@ -36,6 +36,16 @@ Use these sections in this order:
 9. `## Open Questions`
 10. `## Next Steps`
 
+## Diagram Rendering Rules
+
+- Use Mermaid fenced blocks so diagrams render in MkDocs:
+   - Start block with ` ```mermaid ` and close with ` ``` `
+- Add at least these diagrams in each opportunity output file:
+   - Solution architecture flowchart under `## Proposed Solution`
+   - Delivery timeline diagram under `## Timeline and Milestones`
+- Keep node labels short and business-readable.
+- Ensure all diagram facts are traceable to the source PDF.
+
 ## Implementation Steps
 
 1. **Locate the PDF in pre-sales-oppertunity folder**
@@ -64,11 +74,16 @@ Use these sections in this order:
 
 5. **Create the Markdown file** in `docs/oppertunity/<Opportunity-Name>.md` with all 10 required sections populated
 
-6. **Validate content:**
+6. **Add Mermaid diagrams** in the relevant sections:
+   - Architecture flow in `## Proposed Solution`
+   - Timeline view in `## Timeline and Milestones`
+
+7. **Validate content:**
    - No hallucinated facts
    - Each section contains meaningful content or TBD notes
    - Metrics/numbers extracted verbatim from PDF
    - Tables and structured data formatted for readability
+   - Mermaid blocks render correctly in MkDocs
 
 ## Example Command Flow
 
@@ -103,11 +118,35 @@ Each output `.md` file should follow this structure:
 ## Proposed Solution
 [Architecture, products, key components, integration approach]
 
+```mermaid
+flowchart LR
+   CRM[CRM Client] --> APIGW[API Gateway]
+   APIGW --> TMF641[TMF641 Gateway]
+   APIGW --> TMF652[TMF652 Gateway]
+   TMF641 --> SOM[SOM]
+   TMF652 --> ROM[ROM]
+   SOM --> ADP[Southbound Adapters]
+   ROM --> ADP
+   ADP --> NE[Network Elements]
+```
+
 ## Deliverables
 [Work packages, environment setup, testing, support phases]
 
 ## Timeline and Milestones
 [Duration, key milestones with dates, Gantt details if available]
+
+```mermaid
+gantt
+   title Project Timeline
+   dateFormat  YYYY-MM-DD
+   section Plan
+   Initialization     :a1, 2026-01-01, 14d
+   Design/Setup       :a2, after a1, 42d
+   Development        :a3, after a2, 49d
+   Testing            :a4, after a3, 21d
+   Rollout            :a5, after a4, 42d
+```
 
 ## Risks and Assumptions
 [Key assumptions, exclusions, constraints, dependencies]

@@ -1,17 +1,25 @@
-# Welcome to MkDocs
+# Orchestration Pre-Sales Delivery Hub
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This hub provides a structured view of pre-sales opportunities, solution scope, delivery planning, and next-step actions.
 
-## Commands
+## Opportunity Overview
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Current documented opportunities:
 
-## Project layout
+- [OwnCore Provisioning ROM](oppertunity/OwnCore-Provisioning-ROM.md)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Opportunity Map
+
+```mermaid
+flowchart TD
+    HUB[Pre-Sales Delivery Hub] --> OPP1[OwnCore Provisioning ROM]
+    OPP1 --> ARCH[Proposed Architecture]
+    OPP1 --> PLAN[Timeline and Milestones]
+    OPP1 --> RISK[Risks and Assumptions]
+    OPP1 --> NEXT[Next Steps]
+```
+
+## Navigation
+
+- Start with [OwnCore Provisioning ROM](oppertunity/OwnCore-Provisioning-ROM.md) for end-to-end opportunity details.
+- Use the sections in each opportunity page to review business goals, technical scope, and execution readiness.

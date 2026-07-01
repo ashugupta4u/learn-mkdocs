@@ -42,6 +42,15 @@ OwnCore supports multiple clients with separate deployment stacks. The platform 
 
 ## Scope and Requirements
 
+### Provisioning Lifecycle Diagram
+
+```mermaid
+flowchart LR
+   C[Create] --> M[Modify]
+   M --> SR[Suspend/Resume]
+   SR --> T[Terminate]
+```
+
 ### Services Supported
 
 **Service Orders:**
@@ -90,14 +99,24 @@ OwnCore supports multiple clients with separate deployment stacks. The platform 
 
 ### Target Architecture
 
-```
-CRM (Client) → API Gateway → TMF641 GW / TMF652 GW
-                    ↓
-            [SOM | ROM | Catalog]
-            
-            [Adapters for Southbound Integration]
-            
-            [HSS | OCS | PCRF | SMSC | MNP | DP+OTA | Entitlement Server]
+```mermaid
+flowchart LR
+   CRM[CRM Client] --> APIGW[API Gateway]
+   APIGW --> TMF641[TMF641 GW]
+   APIGW --> TMF652[TMF652 GW]
+   TMF641 --> SOM[SOM]
+   TMF652 --> ROM[ROM]
+   SOM --> CATALOG[Catalog]
+   ROM --> CATALOG
+   SOM --> ADP[Southbound Adapters]
+   ROM --> ADP
+   ADP --> HSS[HSS]
+   ADP --> OCS[OCS]
+   ADP --> PCRF[PCRF]
+   ADP --> SMSC[SMSC]
+   ADP --> MNP[MNP]
+   ADP --> OTA[DP+OTA]
+   ADP --> ENT[Entitlement Server]
 ```
 
 ### Key Components
@@ -149,6 +168,19 @@ CRM (Client) → API Gateway → TMF641 GW / TMF652 GW
 | W16-W18 | Testing | M4 | Testing Completed (SIT/UAT/FUAT) |
 | W19-W22 | Production Preparation | M5 | Production Deployment Readiness |
 | W23-W24 | Production Rollout | M6 | Production Deployment Complete |
+
+```mermaid
+gantt
+   title OwnCore Provisioning Project Plan (24 Weeks)
+   dateFormat  YYYY-MM-DD
+   section Delivery Phases
+   Project Initialization              :a1, 2026-04-01, 14d
+   Design and Environment Setup        :a2, after a1, 42d
+   Adapter Development and Modeling    :a3, after a2, 49d
+   Testing (SIT/UAT/FUAT)              :a4, after a3, 21d
+   Production Preparation              :a5, after a4, 28d
+   Production Rollout                  :a6, after a5, 14d
+```
 
 ---
 
