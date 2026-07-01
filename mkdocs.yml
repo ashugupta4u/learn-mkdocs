@@ -1,10 +1,45 @@
-site_name: My Docs
-site_url: https://example.com
+site_name: Orchestration Pre-Sales Delivery Hub
+#repo_url: https://github.hpe.com/hpe/orange-olt-ip-replacement #modif 
+#extra: 
+#  hpe_so_solution: example #modif 
+
+# The solution name must begin with a letter (uppercase or lowercase); that is, a-z or A-Z.
+# The solution name must contain only alphanumeric characters and underscores (hence, spaces are not allowed).
+# The length of the solution name must not exceed 8 characters.
+
 theme:
-  name: material
-  palette:
-    primary: 'indigo'
-    accent: 'indigo'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - yml
+    - rust
+    - xml
+    - java
+    - bash
+  navigation_depth: 6
+extra_css:
+  - css/hpe_theme.css
+
+markdown_extensions:
+  - extra
+  - tables
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - macros
+  - mermaid2
+
+nav:
+  - CONTENTS:
+      - Start here: index.md
+      - Pre-Sales Opportunity database:
+          - Owncore: docs/oppertunity/Owncore-Opportunity-Database.md
+      - Templates: templates.md
+      - Guides and guidelines:
+          - Design patterns: guides/design-patterns.md
+exclude_docs: |
+  !.assets  # Don't exclude '.assets' although all other '.*' are excluded
