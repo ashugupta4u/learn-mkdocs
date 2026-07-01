@@ -20,13 +20,20 @@ theme:
   navigation_depth: 6
 extra_css:
   - css/hpe_theme.css
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - js/mermaid-init.js
 
 markdown_extensions:
   - extra
   - tables
   - admonition
-  - codehilite
-  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - search
