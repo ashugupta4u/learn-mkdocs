@@ -30,7 +30,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - macros
+#  - macros
   - mermaid2
 
 nav:
