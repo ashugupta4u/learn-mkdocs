@@ -37,7 +37,7 @@ nav:
   - CONTENTS:
       - Start here: index.md
       - Pre-Sales Opportunity database:
-          - Owncore: docs/oppertunity/OwnCore-Provisioning-ROM.md
+          - Owncore: oppertunity/OwnCore-Provisioning-ROM.md
       - Templates: templates.md
       - Guides and guidelines:
           - Design patterns: guides/design-patterns.md
